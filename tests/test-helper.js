@@ -1,5 +1,5 @@
-import Application from 'egaming-portfolio/app';
-import config from 'egaming-portfolio/config/environment';
+import Application from 'egame-portfolio/app';
+import config from 'egame-portfolio/config/environment';
 import * as QUnit from 'qunit';
 import { setApplication } from '@ember/test-helpers';
 import { setup } from 'qunit-dom';

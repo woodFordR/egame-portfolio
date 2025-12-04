@@ -1,11 +1,11 @@
 {
-  "name": "egaming-portfolio",
-  "version": "0.0.0",
+  "name": "egame-portfolio",
+  "version": "1.0.0",
   "private": true,
-  "description": "Small description for egaming-portfolio goes here",
+  "description": "a portfolio styled with / by games",
   "repository": "",
   "license": "MIT",
-  "author": "",
+  "author": "Adam Kaewell",
   "directories": {
     "doc": "doc",
     "test": "tests"

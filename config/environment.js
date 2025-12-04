@@ -1,8 +1,8 @@
 'use strict';
 
-module.exports = function (environment) {
+module.exports = function(environment) {
   const ENV = {
-    modulePrefix: 'egaming-portfolio',
+    modulePrefix: 'egame-portfolio',
     environment,
     rootURL: '/',
     locationType: 'history',
