@@ -1,15 +1,9 @@
 {{page-title "Movies"}}
 
 <ul>
-  {{#each
-    (array
-      (hash title="Inception" actor="Leonardo Dicaprio" rating=3)
-      (hash title="Dune" actor="Timothee Chalamet" rating=4)
-      (hash title="The Terminator" actor="Arnold Schwarzenegger" rating=2)
-    ) as |movie|
-    }}
+  {{#each @model as |movie|}}
     <li class="leading-loose">
-      {{movie.title}} by {{movie.actor}} <span class="float-right">{{movie.rating}}</span>
+      {{movie.title}} starring {{movie.actor}} <span class="float-right">{{movie.rating}}</span>
     </li>
   {{/each}}
 </ul>

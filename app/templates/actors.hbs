@@ -1,2 +1,9 @@
 {{page-title "Actors"}}
-{{outlet}}
+
+<ul>
+  {{#each @model as |actor|}}
+    <li class="leading-loose">
+      Famous Actor ~ {{actor.name}}
+    </li>
+  {{/each}}
+</ul>

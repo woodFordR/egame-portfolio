@@ -1143,7 +1143,7 @@
     "@embroider/addon-shim" "^1.9.0"
     "@embroider/macros" "^1.16.9"
 
-"@embroider/addon-shim@^1.10.2", "@embroider/addon-shim@^1.8.7", "@embroider/addon-shim@^1.8.9", "@embroider/addon-shim@^1.9.0":
+"@embroider/addon-shim@^1.10.0", "@embroider/addon-shim@^1.10.2", "@embroider/addon-shim@^1.8.7", "@embroider/addon-shim@^1.8.9", "@embroider/addon-shim@^1.9.0":
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/@embroider/addon-shim/-/addon-shim-1.10.2.tgz#5164c65de0fd242422594c2f94b3c5eab4ab8e36"
   integrity sha512-EfI9cJ5/3QSUJtwm7x1MXrx3TEa2p7RNgSHefy7fvGm8/DP1xUFL25nST1NaHbHcqR1UhMlrTtv5iUIDoVzeQQ==
@@ -1245,6 +1245,13 @@
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/@embroider/hbs-loader/-/hbs-loader-3.0.5.tgz#b4f72ddc0da363c154a8085d5c399d689f32c357"
   integrity sha512-/K9LpLSlTf8X0Htn+m61IRny6kHyIScBX4Lqrpd8GSA07snQDyVJygQngQFMReITlIUK0YOIK7CxDIml2NN3iw==
+
+"@embroider/legacy-inspector-support@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@embroider/legacy-inspector-support/-/legacy-inspector-support-0.1.3.tgz#37d0f6f6f04450d0e051996f08a40571d08e9d18"
+  integrity sha512-0VzD1xExkT78a1CUiW8wZ5VZDL4bVyMSc3t8E/RiAW1X6TlyKIA/m6zoQgsQtQIiiTPPxH0/1Tdd0F7b5//etw==
+  dependencies:
+    "@embroider/addon-shim" "^1.10.0"
 
 "@embroider/macros@^1.0.0", "@embroider/macros@^1.16.12", "@embroider/macros@^1.16.5", "@embroider/macros@^1.16.9", "@embroider/macros@^1.18.1":
   version "1.19.5"
