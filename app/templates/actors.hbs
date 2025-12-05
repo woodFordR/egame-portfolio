@@ -1,9 +1,36 @@
 {{page-title "Actors"}}
 
-<ul>
-  {{#each @model as |actor|}}
-    <li class="leading-loose">
-      Famous Actor ~ {{actor.name}}
-    </li>
-  {{/each}}
-</ul>
+<div class="w-1/3 px-2">
+  <ul class="pl-2 pr-8">
+    <div class="w-1/3 px-2">
+      <ul class="pl-2 pr-8">
+        {{#each @model as |actor|}}
+          <li class="mb-2">
+            <LinkTo
+              @route="actors.actor.movies"
+              @model={{actor.id}}
+            >
+              {{actor.name}}
+            </LinkTo>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="w-2/3 px-2">
+      {{outlet}}
+    </div>
+    {{#each @model as |actor|}}
+      <li class="mb-2">
+        <LinkTo
+          @route="actors.actor.movies"
+          @model={{actor.id}}
+        >
+          {{actor.name}}
+        </LinkTo>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+<div class="w-2/3 px-2">
+  {{outlet}}
+</div>
