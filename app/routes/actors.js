@@ -1,11 +1,19 @@
 import Route from '@ember/routing/route';
+import { tracked } from '@glimmer';
+
+class Actor {
+  @tracked name;
+  constructor(name) {
+    this.name = name;
+  }
+}
 
 export default class ActorsRoute extends Route {
   model() {
     return [
-      { name: "Leonardo Dicaprio" },
-      { name: "Timothee Chalamet" },
-      { name: "Arnold Schwarzenegger" },
+      new Actor("Leonardo Dicaprio"),
+      new Actor("Timothee Chalamet"),
+      new Actor("Arnold Schwarzenegger"),
     ];
   }
 }
