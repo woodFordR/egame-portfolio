@@ -1,5 +1,16 @@
-{{!-- app/templates/bands/band.hbs --}}
-
-{{page-title "Band"}}
-
+{{!-- app/templates/actors/actor.hbs --}}
+{{page-title "Movies | Software, Portfolio, Games, Portfolio with Octane!" replace=true}}
 {{outlet}}
+{{#if @model.length}}
+  <ul>
+    {{#each @model as |movie|}}
+      <li class="mb-2">
+        {{movie.title}}
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p class="text-center">
+    The actor has no movies yet.
+  </p>
+{{/if}}
