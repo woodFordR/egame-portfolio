@@ -11,11 +11,7 @@ Router.map(function() {
     this.route('actor', {
       path: ':id'
     }, function() {
-      this.route('movies', {
-        path: ':id'
-      }, function() {
-        this.route('movies');
-      });
+      this.route('movies');
     });
   });
 });
