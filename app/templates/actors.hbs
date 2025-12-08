@@ -4,7 +4,7 @@
   <ul class="pl-2 pr-8">
     {{#each @model as |actor|}}
       <li class="mb-2">
-        <LinkTo @route="actors.actor.songs" @model={{actor.id}}>
+        <LinkTo @route="actors.actor.movies" @model={{actor.id}}>
           {{actor.name}}
         </LinkTo>
       </li>

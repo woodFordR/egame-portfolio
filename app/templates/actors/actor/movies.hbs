@@ -1,15 +1,16 @@
 {{!-- app/templates/actors/actor/movies.hbs --}}
+
 {{#if @model.length}}
   <ul>
-    {{#each @model as |song|}}
+    {{#each @model as |movie|}}
       <li class="mb-2">
-        {{song.title}}
-        <span class="float-right">{{song.rating}}</span>
+        {{movie.title}}
+        <span class="float-right">{{movie.rating}}</span>
       </li>
     {{/each}}
   </ul>
 {{else}}
   <p class="text-center">
-    The band has no songs yet.
+    The actor has no movies yet.
   </p>
 {{/if}}
