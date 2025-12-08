@@ -5,7 +5,12 @@
     {{#each @model as |movie|}}
       <li class="mb-2">
         {{movie.title}}
-        <span class="float-right">{{movie.rating}}</span>
+        <span class="float-right">
+          <StarRating
+            @rating={{movie.rating}}
+            @onUpdate={{set movie "rating"}}
+          />
+        </span>
       </li>
     {{/each}}
   </ul>

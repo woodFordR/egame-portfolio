@@ -23,7 +23,7 @@ export default class ActorsRoute extends Route {
     let titanic = new Movie({
       title: 'Titanic',
       actor: 'Leonardo Dicaprio',
-      rating: 5,
+      rating: 1,
     });
 
     let theTerminator = new Movie({
