@@ -1,8 +1,9 @@
 {{!-- app/templates/actors/actor/movies.hbs --}}
+{{page-title @model.name "'s movies ... with Octane" replace=true }}
 
-{{#if @model.length}}
+{{#if @model.movies.length}}
   <ul>
-    {{#each @model as |movie|}}
+    {{#each @model.movies as |movie|}}
       <li class="mb-2">
         {{movie.title}}
         <span class="float-right">
@@ -18,4 +19,42 @@
   <p class="text-center">
     The actor has no movies yet.
   </p>
+{{/if}}
+{{#if this.showAddMovie}}
+  <div class="flex justify-center mt-2">
+    <button
+      type="button"
+      class="px-4 py-2 rounded bg-purple-600 shadow-md hover:shadow-lg hover:text-white hover:bg-purple-500 focus:outline-none"
+      {{on "click" (set this "showAddMovie" false)}}
+    >
+      Add Movie
+    </button>
+  </div>
+{{else}}
+<div class="mt-6 flex">
+  <label for="title" class="sr-only">Title</label>
+    <input
+      type="text"
+      id="title"
+      class="text-gray-800 bg-white rounded-md py-2 px-4"
+      placeholder="Title"
+      value={{this.title}}
+      {{on "input" this.updateTitle}}
+    />
+    <button
+      type="button"
+      class="ml-4 px-4 py-2 rounded shadow-md hover:shadow-lg hover:text-white {{if this.hasNoTitle "bg-purple-500" "bg-purple-600"}}"
+      disabled={{this.hasNoTitle}}
+      {{on "click" this.saveMovie}}
+    >
+     Save
+    </button>
+    <button
+      type="button"
+      class="ml-2 px-4 p-2 rounded bg-white border border-bg-purple-600 shadow-md text-purple-600 hover:shadow-lg"
+      {{on "click" this.cancel}}
+    >
+      Cancel
+    </button>
+  </div>
 {{/if}}

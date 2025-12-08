@@ -1,20 +1,21 @@
 import Route from '@ember/routing/route';
 import { tracked } from '@glimmer/tracking';
 
-class Actor {
-  @tracked name;
-  constructor({ id, name, movies }) {
-    this.id = id;
-    this.name = name;
-    this.movies = movies;
-  }
-}
-
-class Movie {
+export class Movie {
   constructor({ title, rating, actor }) {
     this.title = title;
     this.rating = rating ?? 0;
     this.actor = actor;
+  }
+}
+
+class Actor {
+  @tracked name;
+  @tracked movies
+  constructor({ id, name, movies }) {
+    this.id = id;
+    this.name = name;
+    this.movies = movies;
   }
 }
 
