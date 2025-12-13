@@ -9,6 +9,7 @@
         <span class="float-right">
           <StarRating
             @rating={{movie.rating}}
+            {{!-- @onUpdate={{fn this.updateRating movie}} --}}
             @onUpdate={{set movie "rating"}}
           />
         </span>

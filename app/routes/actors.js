@@ -7,6 +7,20 @@ export default class ActorsRoute extends Route {
   @service catalog
 
   model() {
+    // async model() {
+    // let response = await fetch('/actors');
+    // let json = await response.json();
+    // for (let item of json.data) {
+    //   let { id, attributes, relationships } = item;
+    //   let rels = {};
+    //   for (let relationshipName in relationships) {
+    //    rels[relationshipName] = relationships[relationshipName].links.related;
+    //   }
+    //   let record = new Actor({ id, ...attributes }, rels);
+    //   this.catalog.add('actor', record);
+    // }
+    // return this.catalog.actors;
+    // }
     let titanic = new Movie({
       title: 'Titanic',
       rating: 1,

@@ -1,6 +1,5 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-import { kebabCase } from 'change-case';
 import { tracked } from '@glimmer/tracking';
 import Actor from 'egame-portfolio/models/actor';
 import { service } from '@ember/service';
@@ -25,4 +24,25 @@ export default class ActorsNewController extends Controller {
     this.catalog.add('actor', actor);
     this.router.transitionTo('actors.actor.movies', actor.id);
   }
+  // async saveActor() {
+  //   let response = await fetch('/actors', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/vnd.api+json',
+  //     },
+  //     body: JSON.stringify({
+  //       data: {
+  //         type: 'actors',
+  //         attributes: {
+  //           name: this.name,
+  //         },
+  //       },
+  //     }),
+  //   });
+  //   let json = await response.json();
+  //   let { id, attributes } = json.data;
+  //   let record = new Actor({ id, ...attributes });
+  //   this.catalog.add('actor', record);
+  //   this.router.transitionTo('actors.actor.movies', id);
+  // }
 }
