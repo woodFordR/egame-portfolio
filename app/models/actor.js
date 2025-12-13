@@ -1,6 +1,6 @@
 import { tracked } from '@glimmer/tracking';
 
-export class Actor {
+export default class Actor {
   @tracked name;
   @tracked movies
   constructor({ id, name, movies }) {

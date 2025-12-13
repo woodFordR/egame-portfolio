@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import { service } from '@ember/service';
-import { Actor } from 'egame-portfolio/model/actor';
-import { Movie } from 'egame-portfolio/model/movie';
+import Actor from 'egame-portfolio/models/actor';
+import Movie from 'egame-portfolio/models/movie';
 
 export default class ActorsRoute extends Route {
   @service catalog

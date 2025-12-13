@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import { Movie } from 'egame-portfolio/model/movie';
+import Movie from 'egame-portfolio/models/movie';
 import { service } from '@ember/service';
 
 export default class ActorsActorMoviesController extends Controller {
