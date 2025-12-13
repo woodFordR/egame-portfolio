@@ -9,7 +9,7 @@ export class Movie {
   }
 }
 
-class Actor {
+export class Actor {
   @tracked name;
   @tracked movies
   constructor({ id, name, movies }) {

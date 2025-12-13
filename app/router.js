@@ -13,6 +13,7 @@ Router.map(function() {
     }, function() {
       this.route('movies');
     });
+    this.route('new');
   });
 });
 
