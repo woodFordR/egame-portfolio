@@ -1,24 +1,7 @@
 import Route from '@ember/routing/route';
-import { tracked } from '@glimmer/tracking';
 import { service } from '@ember/service';
-
-export class Movie {
-  constructor({ title, rating, actor }) {
-    this.title = title;
-    this.rating = rating ?? 0;
-    this.actor = actor;
-  }
-}
-
-export class Actor {
-  @tracked name;
-  @tracked movies
-  constructor({ id, name, movies }) {
-    this.id = id;
-    this.name = name;
-    this.movies = movies;
-  }
-}
+import { Actor } from 'egame-portfolio/model/actor';
+import { Movie } from 'egame-portfolio/model/movie';
 
 export default class ActorsRoute extends Route {
   @service catalog
@@ -26,37 +9,31 @@ export default class ActorsRoute extends Route {
   model() {
     let titanic = new Movie({
       title: 'Titanic',
-      actor: 'Leonardo Dicaprio',
       rating: 1,
     });
 
     let theTerminator = new Movie({
       title: 'The Terminator',
-      actor: 'Arnold Schwarzenegger',
       rating: 4,
     });
 
     let callMeByYourName = new Movie({
       title: 'Call Me by Your Name',
-      actor: 'Timothee Chalamet',
       rating: 3,
     });
 
     let theDeparted = new Movie({
       title: 'The Departed',
-      actor: 'Leonardo Dicaprio',
       rating: 5,
     });
 
     let predator = new Movie({
       title: 'Predator',
-      actor: 'Arnold Schwarzenegger',
       rating: 2,
     });
 
     let dune = new Movie({
       title: 'Dune',
-      actor: 'Timothee Chalamet',
       rating: 5,
     });
 
@@ -78,6 +55,19 @@ export default class ActorsRoute extends Route {
       movies: [predator, theTerminator],
     });
 
+    dune.actor = timotheeChalamet;
+    callMeByYourName.actor = timotheeChalamet;
+    predator.actor = arnoldSchwarzenegger;
+    theTerminator.actor = arnoldSchwarzenegger;
+    theDeparted.actor = leonardoDicaprio;
+    titanic.actor = leonardoDicaprio;
+
+    this.catalog.add('movie', dune);
+    this.catalog.add('movie', callMeByYourName);
+    this.catalog.add('movie', predator);
+    this.catalog.add('movie', theTerminator);
+    this.catalog.add('movie', theDeparted);
+    this.catalog.add('movie', titanic);
     this.catalog.add('actor', leonardoDicaprio);
     this.catalog.add('actor', timotheeChalamet);
     this.catalog.add('actor', arnoldSchwarzenegger);

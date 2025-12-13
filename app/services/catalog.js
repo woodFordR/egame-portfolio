@@ -22,5 +22,10 @@ export default class CatalogService extends Service {
   get movies() {
     return this.storage.movies;
   }
+
+  find(type, filterFn) {
+    let collection = type === 'actor' ? this.actors : this.movies;
+    return collection.find(filterFn);
+  }
 }
 

@@ -1,9 +1,11 @@
 import Route from '@ember/routing/route';
+import { service } from '@ember/service';
 
 export default class ActorsActorRoute extends Route {
+  @service catalog
+
   model(params) {
-    let actors = this.modelFor('actors');
-    return actors.find((actor) => actor.id === params.id);
+    return this.catalog.find('actor', (actor) => actor.id === params.id);
   }
 }
 

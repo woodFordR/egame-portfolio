@@ -2,7 +2,7 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { kebabCase } from 'change-case';
 import { tracked } from '@glimmer/tracking';
-import { Actor } from 'egame-portfolio/routes/actors';
+import { Actor } from 'egame-portfolio/model/actor';
 import { service } from '@ember/service';
 
 export default class ActorsNewController extends Controller {
