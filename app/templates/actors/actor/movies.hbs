@@ -24,8 +24,7 @@
   <div class="flex justify-center mt-2">
     <button
       type="button"
-      class="px-4 py-2 rounded bg-purple-600 shadow-md hover:shadow-lg
-        hover:text-white hover:bg-purple-500 focus:outline-none"
+      class="px-4 py-2 rounded bg-purple-600 shadow-md hover:shadow-lg hover:text-white hover:bg-purple-500 focus:outline-none"
       {{on "click" (set this "showAddMovie" false)}}
     >
       Add Movie
@@ -44,8 +43,7 @@
     />
     <button
       type="button"
-      class="ml-4 px-4 py-2 rounded shadow-md hover:shadow-lg hover:text-white
-        {{if this.hasNoTitle "bg-purple-500" "bg-purple-600"}}"
+      class="ml-4 px-4 py-2 rounded shadow-md hover:shadow-lg hover:text-white {{if this.hasNoTitle "bg-purple-500" "bg-purple-600"}}"
       disabled={{this.hasNoTitle}}
       {{on "click" this.saveMovie}}
     >
@@ -53,8 +51,7 @@
     </button>
     <button
       type="button"
-      class="ml-2 px-4 p-2 rounded bg-white border border-bg-purple-600
-        shadow-md text-purple-600 hover:shadow-lg"
+      class="ml-2 px-4 p-2 rounded bg-white border border-bg-purple-600 shadow-md text-purple-600 hover:shadow-lg"
       {{on "click" this.cancel}}
     >
       Cancel

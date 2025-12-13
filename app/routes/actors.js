@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import { tracked } from '@glimmer/tracking';
+import { service } from '@ember/service';
 
 export class Movie {
   constructor({ title, rating, actor }) {
@@ -20,6 +21,8 @@ export class Actor {
 }
 
 export default class ActorsRoute extends Route {
+  @service catalog
+
   model() {
     let titanic = new Movie({
       title: 'Titanic',
@@ -75,10 +78,10 @@ export default class ActorsRoute extends Route {
       movies: [predator, theTerminator],
     });
 
-    return [
-      leonardoDicaprio,
-      timotheeChalamet,
-      arnoldSchwarzenegger
-    ];
+    this.catalog.add('actor', leonardoDicaprio);
+    this.catalog.add('actor', timotheeChalamet);
+    this.catalog.add('actor', arnoldSchwarzenegger);
+
+    return this.catalog.actors;
   }
 }

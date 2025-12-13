@@ -3,9 +3,12 @@ import { action } from '@ember/object';
 import { kebabCase } from 'change-case';
 import { tracked } from '@glimmer/tracking';
 import { Actor } from 'egame-portfolio/routes/actors';
+import { service } from '@ember/service';
 
 export default class ActorsNewController extends Controller {
   @tracked name;
+  @service catalog;
+  @service router;
 
   get hasNoName() {
     return !this.name;
@@ -18,6 +21,8 @@ export default class ActorsNewController extends Controller {
 
   @action
   saveActor() {
-    new Actor({ name: this.name, id: kebabCase(this.name) });
+    let actor = new Actor({ name: this.name, id: kebabCase(this.name) });
+    this.catalog.add('actor', actor);
+    this.router.transitionTo('actors.actor.movies', actor.id);
   }
 }
