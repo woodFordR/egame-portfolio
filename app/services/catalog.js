@@ -6,25 +6,25 @@ export default class CatalogService extends Service {
 
   constructor() {
     super(...arguments);
-    this.storage.actors = tracked([]);
-    this.storage.movies = tracked([]);
+    this.storage.bands = tracked([]);
+    this.storage.songs = tracked([]);
   }
 
   add(type, record) {
-    let collection = type === 'actor' ? this.storage.actors : this.storage.movies;
+    let collection = type === 'band' ? this.storage.bands : this.storage.songs;
     collection.push(record);
   }
 
-  get actors() {
-    return this.storage.actors;
+  get bands() {
+    return this.storage.bands;
   }
 
-  get movies() {
-    return this.storage.movies;
+  get songs() {
+    return this.storage.songs;
   }
 
   find(type, filterFn) {
-    let collection = type === 'actor' ? this.actors : this.movies;
+    let collection = type === 'band' ? this.bands : this.songs;
     return collection.find(filterFn);
   }
 }

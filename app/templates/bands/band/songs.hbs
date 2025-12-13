@@ -1,15 +1,15 @@
-{{!-- app/templates/actors/actor/movies.hbs --}}
-{{page-title @model.name "'s movies ... with Octane" replace=true }}
+{{!-- app/templates/bands/band/songs.hbs --}}
+{{page-title @model.name "'s Songs ... with Octane" replace=true }}
 
-{{#if @model.movies.length}}
+{{#if @model.songs.length}}
   <ul>
-    {{#each @model.movies as |movie|}}
+    {{#each @model.songs as |song|}}
       <li class="mb-2">
-        {{movie.title}}
+        {{song.title}}
         <span class="float-right">
           <StarRating
-            @rating={{movie.rating}}
-            @onUpdate={{set movie "rating"}}
+            @rating={{song.rating}}
+            @onUpdate={{fn this.updateRating song}}
           />
         </span>
       </li>
@@ -17,17 +17,17 @@
   </ul>
 {{else}}
   <p class="text-center">
-    The actor has no movies yet.
+    The band has no songs yet.
   </p>
 {{/if}}
-{{#if this.showAddMovie}}
+{{#if this.showAddSong}}
   <div class="flex justify-center mt-2">
     <button
       type="button"
       class="px-4 py-2 rounded bg-purple-600 shadow-md hover:shadow-lg hover:text-white hover:bg-purple-500 focus:outline-none"
-      {{on "click" (set this "showAddMovie" false)}}
+      {{on "click" (set this "showAddSong" false)}}
     >
-      Add Movie
+      Add Song
     </button>
   </div>
 {{else}}
@@ -45,7 +45,7 @@
       type="button"
       class="ml-4 px-4 py-2 rounded shadow-md hover:shadow-lg hover:text-white {{if this.hasNoTitle "bg-purple-500" "bg-purple-600"}}"
       disabled={{this.hasNoTitle}}
-      {{on "click" this.saveMovie}}
+      {{on "click" this.saveSong}}
     >
      Save
     </button>

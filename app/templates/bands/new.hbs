@@ -1,8 +1,8 @@
-{{!-- app/templates/actor/new.hbs --}}
-{{page-title "New actor"}}
+{{!-- app/templates/band/new.hbs --}}
+{{page-title "New band"}}
 
 <h3 class="text-lg leading-6 font-medium text-gray-100">
-  New actor
+  New band
 </h3>
 <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
   <div class="sm:col-span-4">
@@ -25,7 +25,7 @@
           type="button"
           class="px-4 py-2 rounded shadow-md hover:shadow-lg hover:text-white {{if this.hasNoName "bg-purple-500" "bg-purple-600"}}"
           disabled={{this.hasNoName}}
-          {{on "click" this.saveActor}}
+          {{on "click" this.saveband}}
         >
           Save
         </button>
