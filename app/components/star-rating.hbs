@@ -1,6 +1,5 @@
 {{!-- app/components/star-rating.hbs --}}
 
-{{yield}}
 {{#each this.stars as |star|}}
   <button type="button" {{on "click" (fn @onUpdate star.rating)}}>
     <FaIcon
