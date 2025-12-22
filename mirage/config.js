@@ -14,5 +14,6 @@ export default function(config) {
 function routes() {
   this.get('/bands');
   this.get('/bands/:id');
+  this.post('/bands');
 }
 

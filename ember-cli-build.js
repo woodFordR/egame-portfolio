@@ -5,7 +5,9 @@ const TailwindPostCSS = require('@tailwindcss/postcss');
 const Autoprefixer = require('autoprefixer');
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-module.exports = function(defaults) {
+module.exports = async function(defaults) {
+  const { setConfig } = await import('@warp-drive/build-config');
+
   const app = new EmberApp(defaults, {
     postcssOptions: {
       compile: {
@@ -24,6 +26,12 @@ module.exports = function(defaults) {
           },
         ],
       },
+    },
+  });
+
+  setConfig(app, __dirname, {
+    deprecations: {
+      DEPRECATE_TRACKING_PACKAGE: false,
     },
   });
 
