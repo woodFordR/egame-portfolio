@@ -1,8 +1,9 @@
 import { module, test } from 'qunit';
-import { visit, click, fillIn, waitFor, findAll } from '@ember/test-helpers';
+import { visit, waitFor } from '@ember/test-helpers';
 import { setupApplicationTest } from 'egame-portfolio/tests/helpers';
 import { setupMirage } from 'ember-cli-mirage/test-support';
 import { getPageTitle } from 'ember-page-title/test-support';
+import { createBand } from '../helpers/custom-helpers';
 
 module('Acceptance | bands', function(hooks) {
   setupApplicationTest(hooks);
@@ -32,9 +33,7 @@ module('Acceptance | bands', function(hooks) {
     this.server.create('band', { name: 'Royal Blood' });
 
     await visit('/');
-    await click('[data-test-rr="new-band-button"]');
-    await fillIn('[data-test-rr="new-band-name"]', 'Caspian');
-    await click('[data-test-rr="save-band-button"]');
+    await createBand('Caspian');
     await waitFor('[data-test-rr="no-songs-text"]')
     await waitFor('p.text-center');
 
